@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
@@ -25,12 +24,16 @@ const config: Config = {
           light: '#60A5FA',
           deep: '#1D4ED8',
         },
+        gold: {
+          DEFAULT: '#B08D57',
+          light: '#D4B996',
+          deep: '#8A6B3F',
+        },
       },
-
       fontFamily: {
-  sans: ['Inter', 'system-ui', 'sans-serif'],
-  display: ['Fraunces', 'Georgia', 'serif'], // remplace Plus Jakarta Sans
-},
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
+      },
       borderRadius: {
         '2xl': '20px',
         '3xl': '24px',
@@ -39,6 +42,7 @@ const config: Config = {
       boxShadow: {
         'soft': '0 4px 40px -8px rgba(0,0,0,0.05)',
         'glow': '0 0 30px rgba(37,99,235,0.15)',
+        'gold-glow': '0 0 40px rgba(176,141,87,0.25)',
         'lift': '0 20px 60px -12px rgba(0,0,0,0.1)',
       },
     },
