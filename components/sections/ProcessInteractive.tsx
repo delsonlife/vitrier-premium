@@ -2,7 +2,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { ClipboardCheck, Search, Factory, Truck } from 'lucide-react'
 
 const steps = [
