@@ -26,10 +26,11 @@ const config: Config = {
           deep: '#1D4ED8',
         },
       },
+
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-      },
+  sans: ['Inter', 'system-ui', 'sans-serif'],
+  display: ['Fraunces', 'Georgia', 'serif'], // remplace Plus Jakarta Sans
+},
       borderRadius: {
         '2xl': '20px',
         '3xl': '24px',
