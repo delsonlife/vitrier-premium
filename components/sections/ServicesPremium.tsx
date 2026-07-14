@@ -2,12 +2,12 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, type ReactElement } from 'react'
 
 interface Service {
   title: string
   desc: string
-  icon: () => JSX.Element
+  icon: () => ReactElement
 }
 
 const services: Service[] = [
@@ -16,7 +16,6 @@ const services: Service[] = [
     desc: 'Installation de baies coulissantes en aluminium, double vitrage haute performance.',
     icon: () => (
       <svg viewBox="0 0 100 100" className="h-16 w-16">
-        {/* Cadre principal */}
         <motion.rect
           x="20" y="10" width="60" height="80" rx="4"
           fill="none"
@@ -26,7 +25,6 @@ const services: Service[] = [
           whileInView={{ pathLength: 1 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
         />
-        {/* Vitre gauche */}
         <motion.rect
           x="22" y="12" width="26" height="76" rx="2"
           fill="currentColor"
@@ -35,7 +33,6 @@ const services: Service[] = [
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         />
-        {/* Vitre droite */}
         <motion.rect
           x="52" y="12" width="26" height="76" rx="2"
           fill="currentColor"
@@ -44,7 +41,6 @@ const services: Service[] = [
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
         />
-        {/* Montant central */}
         <motion.line
           x1="50" y1="10" x2="50" y2="90"
           stroke="currentColor"
@@ -53,7 +49,6 @@ const services: Service[] = [
           whileInView={{ pathLength: 1 }}
           transition={{ delay: 0.9, duration: 0.4 }}
         />
-        {/* Reflet lumineux */}
         <motion.line
           x1="30" y1="20" x2="30" y2="80"
           stroke="white"
@@ -72,7 +67,6 @@ const services: Service[] = [
     desc: 'Remplacement de fenêtres anciennes par du double vitrage à isolation renforcée.',
     icon: () => (
       <svg viewBox="0 0 100 100" className="h-16 w-16">
-        {/* Cadre fenêtre */}
         <motion.rect
           x="20" y="20" width="60" height="60" rx="2"
           fill="none"
@@ -82,7 +76,6 @@ const services: Service[] = [
           whileInView={{ pathLength: 1 }}
           transition={{ duration: 0.8 }}
         />
-        {/* Croisillon horizontal */}
         <motion.line
           x1="20" y1="50" x2="80" y2="50"
           stroke="currentColor"
@@ -91,7 +84,6 @@ const services: Service[] = [
           whileInView={{ pathLength: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         />
-        {/* Croisillon vertical */}
         <motion.line
           x1="50" y1="20" x2="50" y2="80"
           stroke="currentColor"
@@ -100,7 +92,6 @@ const services: Service[] = [
           whileInView={{ pathLength: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         />
-        {/* Vitres avec légère opacité */}
         <motion.rect x="22" y="22" width="26" height="26" fill="currentColor" fillOpacity="0.05"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.8 }} />
         <motion.rect x="52" y="22" width="26" height="26" fill="currentColor" fillOpacity="0.1"
@@ -109,7 +100,6 @@ const services: Service[] = [
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.0 }} />
         <motion.rect x="52" y="52" width="26" height="26" fill="currentColor" fillOpacity="0.04"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.1 }} />
-        {/* Ouverture de la fenêtre : rotation du battant */}
         <motion.g
           initial={{ rotate: 0, originX: '50px', originY: '80px' }}
           whileInView={{ rotate: [0, -15, 0] }}
@@ -125,7 +115,6 @@ const services: Service[] = [
     desc: 'Cloisons vitrées, devantures de magasin, vérandas design pour entreprises.',
     icon: () => (
       <svg viewBox="0 0 100 100" className="h-16 w-16">
-        {/* Bâtiment stylisé */}
         <motion.path
           d="M30 80V40L50 20L70 40V80H55V60H45V80H30Z"
           fill="none"
@@ -135,22 +124,19 @@ const services: Service[] = [
           whileInView={{ pathLength: 1 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
         />
-        {/* Façade vitrée avec lignes horizontales */}
         <motion.line x1="35" y1="55" x2="35" y2="80" stroke="currentColor" strokeWidth="1.5" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ delay: 0.5 }} />
         <motion.line x1="42" y1="45" x2="42" y2="80" stroke="currentColor" strokeWidth="1.5" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ delay: 0.7 }} />
         <motion.line x1="58" y1="45" x2="58" y2="80" stroke="currentColor" strokeWidth="1.5" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ delay: 0.9 }} />
         <motion.line x1="65" y1="55" x2="65" y2="80" stroke="currentColor" strokeWidth="1.5" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ delay: 1.1 }} />
-        {/* Reflet global */}
         <motion.rect x="35" y="42" width="30" height="38" fill="currentColor" fillOpacity="0.05" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.3 }} />
       </svg>
     ),
   },
   {
     title: 'Dépannage & réparation',
-    desc: 'Intervention rapide pour vitre cassée, joint défectueux ou problème d’étanchéité.',
+    desc: "Intervention rapide pour vitre cassée, joint défectueux ou problème d'étanchéité.",
     icon: () => (
       <svg viewBox="0 0 100 100" className="h-16 w-16">
-        {/* Clé à molette stylisée */}
         <motion.path
           d="M30 70 L60 40 L75 55 L45 85 Z"
           fill="none"
@@ -164,7 +150,6 @@ const services: Service[] = [
           initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ delay: 0.6 }} />
         <motion.circle cx="35" cy="75" r="4" fill="currentColor" fillOpacity="0.2"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1 }} />
-        {/* Étoile/éclat (réparation) */}
         <motion.path
           d="M70 30 L73 37 L80 40 L73 43 L70 50 L67 43 L60 40 L67 37 Z"
           fill="currentColor"
@@ -173,7 +158,6 @@ const services: Service[] = [
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.8, type: 'spring', stiffness: 200 }}
         />
-        {/* Trait de réparation */}
         <motion.line x1="45" y1="75" x2="55" y2="65" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 2"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.2 }} />
       </svg>
@@ -188,7 +172,6 @@ export default function ServicesPremium() {
   return (
     <section id="services" className="relative overflow-hidden bg-white py-24">
       <div className="mx-auto max-w-[1400px] px-6" ref={ref}>
-        {/* En-tête */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -206,7 +189,6 @@ export default function ServicesPremium() {
           </p>
         </motion.div>
 
-        {/* Cartes de services */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <motion.div
@@ -217,7 +199,6 @@ export default function ServicesPremium() {
               whileHover={{ y: -8, boxShadow: '0 20px 50px -12px rgba(0,0,0,0.15)' }}
               className="group relative cursor-pointer overflow-hidden rounded-3xl border border-premium-200 bg-white/70 backdrop-blur-sm p-8 transition-all duration-300 hover:border-accent/30 hover:bg-white"
             >
-              {/* Effet de bordure lumineuse au survol */}
               <div
                 className="absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{
@@ -231,7 +212,6 @@ export default function ServicesPremium() {
                 <h3 className="text-xl font-semibold text-premium-900">{service.title}</h3>
                 <p className="mt-3 text-premium-500">{service.desc}</p>
               </div>
-              {/* Effet de verre supplémentaire au survol */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
             </motion.div>
           ))}
