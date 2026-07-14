@@ -1,9 +1,11 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 
+
+import { Inter, Fraunces } from "next/font/google"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" })
+const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-jakarta", weight: ["400","500","600"] })
+// et dans <html className={`${inter.variable} ${fraunces.variable}`}>
 
 export const metadata: Metadata = {
   title: "CristalVitrier | Vitrerie premium",
