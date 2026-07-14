@@ -37,7 +37,7 @@ export default function Navbar() {
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
           <a href="#" className="text-2xl font-display font-bold text-premium-900">
-            Cristal<span className="text-accent">Vitrier</span>
+            <span className="text-accent">Vitrier</span>
           </a>
 
           {/* Desktop links */}
